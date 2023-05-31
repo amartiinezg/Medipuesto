@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="5dp"
+    tools:context=".Fragments.OpcionesFragment">
+
+    <ScrollView
+        android:id="@+id/ScrollOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/background_rounded_orange"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Tipo de pavimiento"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16dp" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:entries="@array/pavimientos"
+                    android:textAlignment="textEnd"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lbl_typeWood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/background_rounded_orange"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Tipo de madera"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_Wood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:entries="@array/madera"
+                    android:gravity="start"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Interior" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exterior" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/background_rounded_orange"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Materiales necesarios"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:layout_weight="0"
+                android:elevation="2dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/specified_requisit_material_multiline"
+                android:inputType="textMultiLine"
+                android:scrollbarSize="6sp"
+                android:scrollbars="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/lyt_CantidadPiezasSust"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0"
+                            android:text="Piezas"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btn_minus_Sust"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="-"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <EditText
+                            android:id="@+id/edit_text_Sust"
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1"
+                            android:textSize="12dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <Button
+                            android:id="@+id/btn_plus_Sust"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="+"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:id="@+id/lyt_CantidadCirugias"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0"
+                            android:text="Cirugías"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btn_minus_Cirugia"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="-"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <EditText
+                            android:id="@+id/edit_text_Cirugia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1"
+                            android:textSize="12dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <Button
+                            android:id="@+id/btn_plus_Cirugia"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="+"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingEnd="42dp">
+
+                        <CheckBox
+                            android:id="@+id/chck_Sustitucion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Sustitución de piezas"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <CheckBox
+                            android:id="@+id/chck_Cirugia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="Cirugía parquet"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyt_slctorSustOpciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="25dp">
+
+                        <Spinner
+                            android:id="@+id/slctor_typeSusttucion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:entries="@array/madera"
+                            android:gravity="end"
+                            android:textAlignment="textEnd"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Spinner
+                            android:id="@+id/slctor_typeCirugia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:entries="@array/madera"
+                            android:gravity="end"
+                            android:textAlignment="textEnd"
+                            android:visibility="visible"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyt_superficieSustOpciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        android:paddingLeft="80dp"
+                        android:paddingEnd="20dp">
+
+                        <EditText
+                            android:id="@+id/field_m2Sustitucion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:ems="3"
+                            android:hint="..."
+                            android:inputType="number"
+                            android:textAlignment="textEnd"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="m2"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <EditText
+                            android:id="@+id/field_m2CirugiaParquet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:ems="3"
+                            android:hint="..."
+                            android:inputType="number"
+                            android:textAlignment="textEnd"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="m2"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lay_zocalo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_Zocalo2"
+                        android:layout_width="100dp"
+                        android:layout_height="33dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/background_rounded_gray"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Zócalos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/field_m2Sustitucion4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0"
+                            android:ems="3"
+                            android:hint="..."
+                            android:inputType="number"
+                            android:textAlignment="textEnd"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/lbl_medidaZocalo2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0"
+                            android:text="m2"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0"
+                        android:entries="@array/madera"
+                        android:gravity="start"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0">
+
+                        <RadioButton
+                            android:id="@+id/radioButton_Hidrofugo"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Hidrofugo"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton_Blanco"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Blanco lacado"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton_DM"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="DM para pintar"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10" />
+
+                <LinearLayout
+                    android:id="@+id/lay_Pletina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:background="@drawable/background_rounded_gray"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lbl_Pletinas2"
+                            android:layout_width="100dp"
+                            android:layout_height="33dp"
+                            android:layout_marginRight="1dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Pletinas"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btn_minus_pletinas"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="-"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <EditText
+                            android:id="@+id/edit_text_pletinas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="3"
+                            android:textSize="12dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <Button
+                            android:id="@+id/btn_plus_pletinas"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/circular_boton_purple"
+                            android:gravity="center"
+                            android:padding="0.5dp"
+                            android:text="+"
+                            android:textSize="13dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/field_m2Sustitucion6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0"
+                            android:ems="3"
+                            android:hint="..."
+                            android:inputType="number"
+                            android:textAlignment="textEnd"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/lbl_medidaPletina3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0"
+                            android:text="m2"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0"
+                        android:entries="@array/madera"
+                        android:gravity="start"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0"
+                        android:text="Acero Inoxidable"
+                        tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+                    <Switch
+                        android:id="@+id/switch2"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0"
+                        android:text="Doble"
+                        tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lbl_tipoBarniz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/background_rounded_orange"
+                    android:padding="5dp"
+                    android:text="Barniz"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16dp" />
+
+                <Spinner
+                    android:id="@+id/spner_typeBarniz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <Spinner
+                    android:id="@+id/spner_typeAcabatBarniz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rounded_turqoise"
+                    android:padding="5dp"
+                    android:text="Movimiento de muebles"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_addMobles"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="0.5dp"
+                    android:text="+"
+                    android:textSize="16dp"
+                    app:backgroundTint="#2DCFB8"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Medipuesto</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="restauracion">Restauración</string>
+    <string name="new_budget">Nuevo presupuesto</string>
+    <string name="look_budgets">Ver presupuestos</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="pavimientos">
+        <item>Seleccionar...</item>
+        <item>1L</item>
+        <item>3L</item>
+        <item>Damas</item>
+        <item>Tablilla</item>
+        <item>Tablilla GF</item>
+        <item>Tricapa</item>
+        <item>Maciza</item>
+        <item>Punta Hungría</item>
+        <item>Espiga</item>
+        <item>Tablón</item>
+    </string-array>
+    <string-array name="madera">
+        <item>Seleccionar...</item>
+        <item>Roble</item>
+        <item>Haya</item>
+        <item>Merbau</item>
+        <item>Suqupira</item>
+        <item>Bolondo</item>
+        <item>Doussier</item>
+        <item>Auro</item>
+        <item>Jatoba</item>
+        <item>Ipe</item>
+        <item>Teca</item>
+        <item>Eucalipto</item>
+    </string-array>
+    <string-array name="zocalos">
+        <item>Seleccionar...</item>
+        <item>Hidrofugo</item>
+        <item>Blanco lacado</item>
+        <item>DM para pintar</item>
+    </string-array>
+    <string-array name="muebles">
+        <item>Silla</item>
+        <item>Mesa</item>
+        <item>Estantería</item>
+        <item>Mueble</item>
+        <item>Sofá</item>
+        <item>Cama</item>
+        <item>Canape</item>
+        <item>Otros</item>
+    </string-array>
+    <string name="specified_requisit_material_multiline">Materiales específicos requeridos para la restauración</string>
+</resources>
