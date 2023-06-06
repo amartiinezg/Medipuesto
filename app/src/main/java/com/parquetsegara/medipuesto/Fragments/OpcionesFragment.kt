@@ -2,6 +2,7 @@ package com.parquetsegara.medipuesto.Fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -12,10 +13,11 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.parquetsegara.medipuesto.Adapters.AdapterMuebles
+import com.parquetsegara.medipuesto.Clases.Database
+import com.parquetsegara.medipuesto.Clases.DatosRestauracion
 import com.parquetsegara.medipuesto.Clases.MarcaBarniz
 import com.parquetsegara.medipuesto.Clases.Mueble
 import com.parquetsegara.medipuesto.databinding.FragmentOpcionesBinding
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +45,7 @@ class OpcionesFragment : Fragment() {
 
     private fun disableViewsAtStart() {
         binding.slctorTypeCirugia.isEnabled = false
-        binding.slctorTypeSusttucion.isEnabled = false
+        binding.slctorTypeSustucion.isEnabled = false
         binding.fieldM2Sustitucion.isEnabled = false
         binding.fieldM2CirugiaParquet.isEnabled = false
         binding.lytSlctorSustOpciones.visibility = View.GONE
@@ -67,7 +69,7 @@ class OpcionesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         disableViewsAtStart()
 
-        binding.editTextMultiLine.setOnTouchListener { v, event ->
+        binding.multilineMateriales.setOnTouchListener { v, event ->
             v.parent.requestDisallowInterceptTouchEvent(true)
             when (event.action and MotionEvent.ACTION_MASK) {
                 MotionEvent.ACTION_UP -> v.parent.requestDisallowInterceptTouchEvent(false)
@@ -88,12 +90,12 @@ class OpcionesFragment : Fragment() {
         }
 
         binding.btnPlusSust.setOnClickListener {
-            cantidadPiezas = binding.editTextSust.text.toString().toInt()
-            increaseValue(cantidadPiezas, binding.editTextSust)
+            cantidadPiezas = binding.valorNumPiezas.text.toString().toInt()
+            increaseValue(cantidadPiezas, binding.valorNumPiezas)
         }
         binding.btnMinusSust.setOnClickListener {
-            cantidadPiezas = binding.editTextSust.text.toString().toInt()
-            decreaseValue(cantidadPiezas, binding.editTextSust)
+            cantidadPiezas = binding.valorNumPiezas.text.toString().toInt()
+            decreaseValue(cantidadPiezas, binding.valorNumPiezas)
         }
 
 
@@ -102,17 +104,17 @@ class OpcionesFragment : Fragment() {
                 binding.lytSlctorSustOpciones.visibility = View.VISIBLE
                 binding.lytSuperficieSustOpciones.visibility = View.VISIBLE
                 cantidadPiezas = 1
-                binding.editTextSust.setText(cantidadPiezas.toString())
+                binding.valorNumPiezas.setText(cantidadPiezas.toString())
 
-                binding.slctorTypeSusttucion.isEnabled = true
+                binding.slctorTypeSustucion.isEnabled = true
                 binding.fieldM2Sustitucion.isEnabled = true
                 binding.lytCantidadPiezasSust.visibility = View.VISIBLE
             } else {
-                binding.slctorTypeSusttucion.isEnabled = false
+                binding.slctorTypeSustucion.isEnabled = false
                 binding.fieldM2Sustitucion.isEnabled = false
                 binding.lytCantidadPiezasSust.visibility = View.GONE
                 cantidadPiezas = 0
-                binding.editTextSust.setText(cantidadPiezas.toString())
+                binding.valorNumPiezas.setText(cantidadPiezas.toString())
 
                 if (!binding.chckCirugia.isChecked) {
                     binding.lytCantidadPiezasSust.visibility = View.GONE
@@ -149,7 +151,7 @@ class OpcionesFragment : Fragment() {
         var cantidad_pletinas = 3
         binding.btnPlusPletinas.setOnClickListener {
             cantidad_pletinas = binding.editTextPletinas.text.toString().toInt()
-            increaseValue(cantidad_pletinas, binding.editTextSust)
+            increaseValue(cantidad_pletinas, binding.valorNumPiezas)
         }
         binding.btnMinusPletinas.setOnClickListener {
             if (cantidad_pletinas > 3) {
@@ -200,7 +202,23 @@ class OpcionesFragment : Fragment() {
 
         binding.btnAddMobles.setOnClickListener {
             mueblesMarcados += Mueble()
-            adapter.notifyItemChanged(mueblesMarcados.size-1)
+            adapter.notifyItemChanged(mueblesMarcados.size - 1)
+        }
+
+        binding.btnSaveWork.setOnClickListener {
+            Database.newRestauracion(
+                DatosRestauracion(
+                    binding.slcTypePaviment.selectedItemPosition.toString(),
+                    binding.slcTypeMadera.selectedItemPosition.toString(),
+                    binding.radiogroupUbicacion.checkedRadioButtonId.toString(),
+
+                    binding.multilineMateriales.text.toString(),
+
+                    binding.chckSustitucion.isChecked,
+                    binding.valorNumPiezas.text.toString().toInt(),
+                    binding.slctorTypeSustucion.selectedItemPosition.toString(),
+                )
+            )
         }
     }
 

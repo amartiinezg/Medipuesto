@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "676768310917",
+    "project_id": "medipuesto",
+    "storage_bucket": "medipuesto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676768310917:android:2882a37970bb57c6c06bec",
+        "android_client_info": {
+          "package_name": "com.parquetsegara.medipuesto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676768310917-a8janr1nk55s4pafilbr7at54d4s2dbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUn_iOpG8GKTu9WCr37m-TqL_x-LT_BTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676768310917-a8janr1nk55s4pafilbr7at54d4s2dbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

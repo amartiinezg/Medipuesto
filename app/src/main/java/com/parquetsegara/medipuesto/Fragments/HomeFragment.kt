@@ -33,7 +33,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.btnNewBudget.setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
             builder.setTitle("¿Qué tipo de trabajo desea realizar?")

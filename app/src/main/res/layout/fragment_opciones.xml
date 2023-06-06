@@ -39,7 +39,7 @@
                     android:textSize="16dp" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/slc_typePaviment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -75,7 +75,7 @@
                     android:textSize="16dp" />
 
                 <Spinner
-                    android:id="@+id/spinner_Wood"
+                    android:id="@+id/slc_typeMadera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content">
 
                 <RadioGroup
+                    android:id="@+id/radiogroup_ubicacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -138,7 +139,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/editTextMultiLine"
+                android:id="@+id/multiline_materiales"
                 android:layout_width="match_parent"
                 android:layout_height="164dp"
                 android:layout_weight="0"
@@ -190,7 +191,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/edit_text_Sust"
+                            android:id="@+id/valor_numPiezas"
                             android:layout_width="wrap_content"
                             android:layout_height="33dp"
                             android:layout_weight="0"
@@ -318,7 +319,7 @@
                         android:paddingLeft="25dp">
 
                         <Spinner
-                            android:id="@+id/slctor_typeSusttucion"
+                            android:id="@+id/slctor_typeSustucion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -704,6 +705,15 @@
                     android:textSize="16dp"
                     app:backgroundTint="#2DCFB8"
                     tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/btn_saveWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Guardar" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
