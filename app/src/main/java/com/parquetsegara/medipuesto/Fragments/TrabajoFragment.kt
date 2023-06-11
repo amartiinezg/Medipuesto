@@ -25,6 +25,7 @@ private const val ARG_PARAM2 = "param2"
 class TrabajoFragment : Fragment(R.layout.trabajo_fragment) {
 
     private lateinit var binding: TrabajoFragmentBinding
+    private lateinit var adapterTrabajo: AdapterTrabajo
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,7 +59,9 @@ class TrabajoFragment : Fragment(R.layout.trabajo_fragment) {
         }
 
 
-        binding.viewPager.adapter = AdapterTrabajo(this, zonasSelected)
+        adapterTrabajo = AdapterTrabajo(this, zonasSelected)
+        binding.viewPager.adapter = adapterTrabajo
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager)
         { tab, position ->
             tab.text = zonasSelected[position]

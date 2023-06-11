@@ -10,13 +10,17 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.parquetsegara.medipuesto.Adapters.AdapterMuebles
+import com.parquetsegara.medipuesto.Adapters.AdapterTrabajo
 import com.parquetsegara.medipuesto.Clases.Database
 import com.parquetsegara.medipuesto.Clases.DatosRestauracion
 import com.parquetsegara.medipuesto.Clases.MarcaBarniz
 import com.parquetsegara.medipuesto.Clases.Mueble
+import com.parquetsegara.medipuesto.MainActivity
 import com.parquetsegara.medipuesto.databinding.FragmentOpcionesBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -81,12 +85,12 @@ class OpcionesFragment : Fragment() {
         var cantidadPiezas = 0
         var cantidadCirugias = 0
         binding.btnPlusCirugia.setOnClickListener {
-            cantidadCirugias = binding.editTextCirugia.text.toString().toInt()
-            increaseValue(cantidadCirugias, binding.editTextCirugia)
+            cantidadCirugias = binding.valorNumCirugias.text.toString().toInt()
+            increaseValue(cantidadCirugias, binding.valorNumCirugias)
         }
         binding.btnMinusCirugia.setOnClickListener {
-            cantidadCirugias = binding.editTextCirugia.text.toString().toInt()
-            decreaseValue(cantidadCirugias, binding.editTextCirugia)
+            cantidadCirugias = binding.valorNumCirugias.text.toString().toInt()
+            decreaseValue(cantidadCirugias, binding.valorNumCirugias)
         }
 
         binding.btnPlusSust.setOnClickListener {
@@ -128,7 +132,7 @@ class OpcionesFragment : Fragment() {
                 binding.lytSlctorSustOpciones.visibility = View.VISIBLE
                 binding.lytSuperficieSustOpciones.visibility = View.VISIBLE
                 cantidadCirugias = 1
-                binding.editTextCirugia.setText(cantidadCirugias.toString())
+                binding.valorNumCirugias.setText(cantidadCirugias.toString())
 
                 binding.slctorTypeCirugia.isEnabled = true
                 binding.fieldM2CirugiaParquet.isEnabled = true
@@ -138,7 +142,7 @@ class OpcionesFragment : Fragment() {
                 binding.fieldM2CirugiaParquet.isEnabled = false
                 binding.lytCantidadCirugias.visibility = View.GONE
                 cantidadCirugias = 0
-                binding.editTextCirugia.setText(cantidadCirugias.toString())
+                binding.valorNumCirugias.setText(cantidadCirugias.toString())
 
                 if (!binding.chckSustitucion.isChecked) {
                     binding.lytCantidadPiezasSust.visibility = View.GONE
@@ -150,13 +154,13 @@ class OpcionesFragment : Fragment() {
 
         var cantidad_pletinas = 3
         binding.btnPlusPletinas.setOnClickListener {
-            cantidad_pletinas = binding.editTextPletinas.text.toString().toInt()
+            cantidad_pletinas = binding.valorNumPletinas.text.toString().toInt()
             increaseValue(cantidad_pletinas, binding.valorNumPiezas)
         }
         binding.btnMinusPletinas.setOnClickListener {
             if (cantidad_pletinas > 3) {
                 cantidad_pletinas -= 1
-                binding.editTextPletinas.setText(cantidad_pletinas.toString())
+                binding.valorNumPletinas.setText(cantidad_pletinas.toString())
             }
         }
 
@@ -205,21 +209,54 @@ class OpcionesFragment : Fragment() {
             adapter.notifyItemChanged(mueblesMarcados.size - 1)
         }
 
+
+        var ubicacion = "NULL"
+        binding.radiogroupEstiloZocalo.setOnCheckedChangeListener{group, checkecId ->
+            val radioButton: RadioButton = binding.radiogroupUbicacion.findViewById(checkecId)
+            ubicacion = radioButton.text.toString()
+        }
+
+        var estilo_zocalo = "NULL"
+        binding.radiogroupEstiloZocalo.setOnCheckedChangeListener{group, checkecId ->
+            val radioButton: RadioButton = binding.radiogroupEstiloZocalo.findViewById(checkecId)
+            estilo_zocalo = radioButton.text.toString()
+        }
+
         binding.btnSaveWork.setOnClickListener {
-            Database.newRestauracion(
+            Toast.makeText(requireContext(), "hy", Toast.LENGTH_LONG).show()
+            /*Database.newRestauracion(
                 DatosRestauracion(
-                    binding.slcTypePaviment.selectedItemPosition.toString(),
-                    binding.slcTypeMadera.selectedItemPosition.toString(),
-                    binding.radiogroupUbicacion.checkedRadioButtonId.toString(),
+                    binding.slcTypePaviment.selectedItem.toString(),
+                    binding.slcTypeMadera.selectedItem.toString(),
+                    ubicacion,
 
                     binding.multilineMateriales.text.toString(),
 
                     binding.chckSustitucion.isChecked,
                     binding.valorNumPiezas.text.toString().toInt(),
-                    binding.slctorTypeSustucion.selectedItemPosition.toString(),
+                    binding.slctorTypeSustucion.selectedItem.toString(),
+                    binding.fieldM2Sustitucion.text.toString().toInt(),
+
+                    binding.chckCirugia.isChecked,
+                    binding.valorNumCirugias.text.toString().toInt(),
+                    binding.slctorTypeCirugia.selectedItem.toString(),
+                    binding.fieldM2CirugiaParquet.text.toString().toInt(),
+
+                    binding.fieldM2Zocalo.text.toString().toInt(),
+                    binding.slctTypeZocalo.selectedItem.toString(),
+                    estilo_zocalo,
+                    binding.valorNumPletinas.text.toString().toInt(),
+                    binding.fieldM2Pletina.text.toString().toInt(),
+                    binding.slctTypePletina.selectedItem.toString(),
+                    "NULL ESTILO",
+                    binding.spnerTypeBarniz.selectedItem.toString(),
+                    binding.spnerTypeAcabatBarniz.selectedItem.toString()
                 )
-            )
+            )*/
         }
+    }
+    fun getValue(): String {
+        return binding.slcTypeMadera.selectedItem.toString()
     }
 
 }

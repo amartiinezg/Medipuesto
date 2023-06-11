@@ -246,7 +246,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/edit_text_Cirugia"
+                            android:id="@+id/valor_numCirugias"
                             android:layout_width="wrap_content"
                             android:layout_height="33dp"
                             android:layout_weight="0"
@@ -445,7 +445,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/field_m2Sustitucion4"
+                            android:id="@+id/field_m2Zocalo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
@@ -469,7 +469,7 @@
                     </LinearLayout>
 
                     <Spinner
-                        android:id="@+id/spinner8"
+                        android:id="@+id/slct_typeZocalo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -479,6 +479,7 @@
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioGroup
+                        android:id="@+id/radiogroup_estiloZocalo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="0">
@@ -552,7 +553,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/edit_text_pletinas"
+                            android:id="@+id/valor_numPletinas"
                             android:layout_width="wrap_content"
                             android:layout_height="33dp"
                             android:layout_weight="0"
@@ -582,7 +583,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/field_m2Sustitucion6"
+                            android:id="@+id/field_m2Pletina"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
@@ -606,7 +607,7 @@
                     </LinearLayout>
 
                     <Spinner
-                        android:id="@+id/spinner6"
+                        android:id="@+id/slct_typePletina"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
